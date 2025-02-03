@@ -41,6 +41,7 @@ export default function CheckoutPage() {
   const [shippingCharge] = useState<number>(10);
   const [wishlist, setWishlist] = useState<Set<string>>(new Set());
   const [toastMessage, setToastMessage] = useState<string | null>(null); // State for toast
+  const [formError, setFormError] = useState<string | null>(null); // State for form error
 
   useEffect(() => {
     const loadCart = () => {
@@ -111,6 +112,20 @@ export default function CheckoutPage() {
   };
 
   const handlePlaceOrder = () => {
+    // Form validation
+    if (
+      !billingInfo.firstName ||
+      !billingInfo.lastName ||
+      !billingInfo.address ||
+      !billingInfo.city ||
+      !billingInfo.zipCode ||
+      !billingInfo.phoneNumber ||
+      !billingInfo.email
+    ) {
+      setFormError("Please fill out all the form fields.");
+      return;
+    }
+
     // Show toast notification
     setToastMessage("Your order has been placed successfully!");
 
@@ -121,12 +136,13 @@ export default function CheckoutPage() {
   };
 
   if (isLoading) {
-    return <div className="container mx-auto p-6 text-center">Loading cart...</div>;
+    return (
+      <div className="container mx-auto p-6 text-center">Loading cart...</div>
+    );
   }
 
   return (
     <div className="overflow-x-hidden">
-      {/* <Hero /> */}
       <Hero />
       <div className="container mx-auto p-6 relative flex flex-col sm:flex-row gap-8">
         {/* Left Column (Cart Items Summary) */}
@@ -158,14 +174,18 @@ export default function CheckoutPage() {
                   {/* Product Details */}
                   <div className="flex-1 ml-4 mt-4 sm:mt-0">
                     <h3 className="text-lg font-semibold">{item.name}</h3>
-                    <p className="text-gray-600">Price: ${item.price.toFixed(2)}</p>
+                    <p className="text-gray-600">
+                      Price: ${item.price.toFixed(2)}
+                    </p>
 
                     {/* Quantity, Wishlist, and Delete in One Line */}
                     <div className="flex items-center space-x-4 mt-2">
                       {/* Quantity Box */}
                       <div className="flex items-center border rounded-md px-3">
                         <button
-                          onClick={() => updateQuantity(item.id, item.quantity - 1)}
+                          onClick={() =>
+                            updateQuantity(item.id, item.quantity - 1)
+                          }
                           className="text-lg"
                         >
                           -
@@ -178,7 +198,9 @@ export default function CheckoutPage() {
                           className="w-12 text-center bg-transparent border-none focus:outline-none"
                         />
                         <button
-                          onClick={() => updateQuantity(item.id, item.quantity + 1)}
+                          onClick={() =>
+                            updateQuantity(item.id, item.quantity + 1)
+                          }
                           className="text-lg"
                         >
                           +
@@ -302,13 +324,14 @@ export default function CheckoutPage() {
                 </div>
               </div>
             </div>
-
-            <button
-              onClick={handlePlaceOrder}
-              className="mt-4 w-full bg-orange-500 text-white py-3 rounded-lg hover:bg-orange-600 text-sm sm:text-base"
-            >
-              Place Order ↗
-            </button>
+            <Link href="/Payment">
+              <button
+                onClick={handlePlaceOrder}
+                className="mt-4 w-full bg-orange-500 text-white py-3 rounded-lg hover:bg-orange-600 text-sm sm:text-base"
+              >
+                Place Order ↗
+              </button>
+            </Link>
           </div>
         </div>
       </div>
@@ -318,6 +341,14 @@ export default function CheckoutPage() {
         <div className="fixed top-16 left-1/2 transform -translate-x-1/2 bg-green-500 text-white py-3 px-6 rounded-lg shadow-lg flex items-center space-x-3">
           <AiOutlineCheck className="text-2xl" />
           <span>{toastMessage}</span>
+        </div>
+      )}
+
+      {/* Form Error Message */}
+      {formError && (
+        <div className="fixed top-16 left-1/2 transform -translate-x-1/2 bg-red-500 text-white py-3 px-6 rounded-lg shadow-lg flex items-center space-x-3">
+          <AiOutlineCheck className="text-2xl" />
+          <span>{formError}</span>
         </div>
       )}
     </div>

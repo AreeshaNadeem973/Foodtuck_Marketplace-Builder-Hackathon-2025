@@ -12,6 +12,7 @@ import StatsSection from "./components/Statssection";
 const page = () => {
   return (
     <div>
+      
       <Home />
       <AboutUs />
       <FoodCategory />
