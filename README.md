@@ -1,121 +1,89 @@
-Hackathon Project - Q-Commerce Website
-DAY 1 - Laying the Foundation
-Goal:
-The primary objective of this hackathon project is to build a Q-Commerce (Quick Commerce) website that offers rapid delivery of food and chef services. The website is designed to provide users with a seamless experience by offering curated categories, fast navigation, and an efficient ordering process.
 
-What We Did:
-Outlined the Q-Commerce Goal:
-Defined the purpose of the website to deliver value by catering to immediate delivery needs.
-Highlighted the user-centric approach for faster delivery and easy access to a variety of food options.
+Q-Commerce Website Project - Food-Tunk
+Project Overview
+Food-Tunk is a Quick-Commerce (Q-Commerce) platform that offers users an efficient and seamless way to order food and chef services with rapid delivery. The website is designed for a user-friendly experience, focusing on a clean and modern UI/UX for easy navigation and quick access to food items, chef services, and more.
+
+Day 1 - Laying the Foundation
+Goal
+The goal was to outline the core purpose of the Q-Commerce platform, ensuring that it meets the needs of users by offering fast delivery services.
+
+What We Did
+Defined the purpose of the website to deliver value by meeting immediate delivery demands.
+Designed with a user-centric approach for fast access to a variety of food and chef options.
 Website Advantages:
-Provides users with a comprehensive food menu and chef services.
-Designed for scalability and quick adaptability to user demands.
-Implements a modern UI/UX to enhance the user experience.
-DAY 2 - Planning the Technical Foundation
-Goal:
-To establish the technical foundation for the Q-Commerce platform, including the selection of tools, technologies, and architectural setup.
+Comprehensive food menu and chef services.
+Scalable and adaptable to meet growing user demands.
+Modern UI/UX design to improve user experience.
+Day 2 - Planning the Technical Foundation
+Goal
+Establish the technical structure, including the selection of tools, technologies, and architectural setup for the platform.
 
-What We Did:
-System Architecture:
-Designed a robust architecture combining Sanity CMS as the backend for content management and Next.js for the frontend.
-Chose GROQ queries to fetch data efficiently from Sanity CMS.
+What We Did
+Designed a robust architecture combining Sanity CMS as the backend for content management and Next.js for frontend development.
+Used GROQ queries to fetch data from Sanity CMS.
 Technology Stack:
-Sanity CMS: For managing and structuring content like food items and chef details.
-Next.js: To build the frontend with a focus on speed, SEO, and developer experience.
-GROQ Queries: For seamless data retrieval from Sanity.
+Sanity CMS: For managing content like food items and chef details.
+Next.js: Frontend framework for building fast, SEO-optimized applications.
+GROQ Queries: For efficient data retrieval from Sanity CMS.
 Requirements Identified:
-Defined the necessary schemas for food and chef data.
-Outlined the API integration strategy to import and display data dynamically.
-DAY 3 - API Integration Report
-Goal:
-To integrate APIs and migrate data into Sanity CMS, ensuring a functional marketplace backend while displaying data on the frontend.
+Created schemas for food and chef data.
+Planned the API integration strategy to import and display dynamic data.
+Day 3 - API Integration Report
+Goal
+Successfully integrate APIs and migrate data to Sanity CMS for a functional marketplace backend, ensuring seamless display on the frontend.
 
 What We Did:
 Data Migration:
-Used a custom migration script to fetch data from APIs and import it into Sanity CMS.
-Uploaded food and chef images dynamically to Sanity assets.
-Validated all data to ensure compatibility with Sanity schemas.
+Used custom scripts to fetch data from APIs and imported it into Sanity CMS.
+Uploaded food and chef images dynamically into Sanity assets.
 API Integration:
-Integrated APIs:
-Food API: https://sanity-nextjs-rouge.vercel.app/api/foods
-Chef API: https://sanity-nextjs-rouge.vercel.app/api/chefs
-Fetched data using Axios and displayed it dynamically on the frontend using GROQ queries.
+Integrated Food API and Chef API.
+Data fetched using Axios and displayed dynamically on the frontend using GROQ queries.
 Frontend Integration:
-Successfully displayed imported data on the Next.js frontend using GROQ queries.
-Ensured proper rendering of food items and chef details with images, descriptions, and categories.
-DAY 4 - Enhancing Functionality
-Goal:
-To implement advanced features that improve user experience and interactivity on the Q-Commerce platform.
+Successfully displayed food items and chef details using GROQ queries.
+Rendered images, descriptions, and categories properly.
+Day 4 - Enhancing Functionality
+Goal
+Implement advanced features that enhance user experience and interactivity.
 
 What We Did:
-Dynamic Routing:
-Implemented dynamic routing for pages such as product details.
-Users can now view individual product pages by clicking on items from the menu or shop page. Each product page is dynamically rendered based on the unique slug.
+Dynamic Routing: Implemented dynamic routes for product detail pages, allowing users to view individual product pages.
+
 Add to Cart Functionality:
-Added a button to each product for adding it to the cart.
-Items are stored in the cart, and their quantity is adjustable.
-Total price updates dynamically as items are added or quantities are modified.
+
+Added "Add to Cart" button for each product.
+Enabled cart data management (add/remove items, adjust quantity, update price dynamically).
 Checkout Page:
-Built a dedicated checkout page to review cart contents and proceed to payment.
-Added basic form validation for user information.
+
+Built a checkout page to review cart contents.
+Integrated basic form validation for user input.
 Search Bar Functionality:
-Integrated a search bar for finding products.
-Search results update dynamically as users type.
+
+Added a search bar with real-time dynamic updates.
 Price Filtering:
-Added a filter to sort products by price range.
-Updates the product list in real time based on the selected range.
-Other Functionalities:
-Ensured all pages and components are fully responsive across devices.
-Enhanced the visual elements to provide a more intuitive user experience.
-Used React Context API for global state management to handle cart and product data efficiently.
-Conclusion
-Over the past four days, we have laid a solid foundation for the Q-Commerce website, planned the technical architecture, and implemented dynamic API integrations and advanced features. This project showcases:
 
-A seamless backend integration using Sanity CMS.
-Efficient migration and management of data through custom scripts.
-Dynamic rendering of content on the frontend with GROQ queries.
-Advanced user-focused functionalities like search, filtering, and dynamic cart management.
-The project is now well-positioned for further enhancements, including user authentication, order management, and real-time updates to improve user experience.
+Added a filter to sort products by price range and update the product list in real-time.
+Other Enhancements:
 
-Day 06: Deployment Preparation and Staging Environment Setup
+Ensured the website is fully responsive.
+Enhanced the visual elements to improve user experience.
+Used React Context API for managing global state (cart and product data).
+Day 6 - Deployment Preparation and Staging Environment Setup
 Objective
-In Day 06, the focus was on preparing the marketplace application for deployment. This involved setting up a staging environment, configuring hosting platforms, ensuring the application is production-ready, and following best practices for handling environments.
+Prepare the Q-Commerce platform for deployment and ensure it is production-ready.
 
-Deployment Strategy Planning
-1. Choose a Hosting Platform: Vercel
-Easy Integration with Next.js.
-Automatic Deployment from GitHub repository.
-Scalability for handling varying traffic.
-Serverless Functions for backend logic.
-2. Finalize Application’s Interaction with Backend Services
-Sanity CMS: Ensured content fetching works correctly.
-Third-party APIs: Verified secure API calls and proper handling of sensitive data.
-Environment Variable Configuration
-1. Secure API Keys, Database Credentials, and Sensitive Data
-Stored API keys and credentials securely using .env files.
-2. Configure Environment Variables in Vercel
-Set up environment variables in the Vercel platform for secure deployment.
-Staging Environment Setup
-1. Deploy the Application to Staging
-Pushed latest code to GitHub and linked a staging branch in Vercel.
-Vercel triggered automatic deployment.
-2. Validate Deployment
-Verified build success through Vercel logs and checked the staging URL.
-Tested all pages, features, and backend integrations for correctness.
-3. Troubleshoot
-Reviewed build logs and ensured environment variables were correctly configured.
-Staging Environment Testing
-1. Conduct Functional Testing
-Used Cypress to test workflows and Postman to validate API responses.
-2. Perform Performance Testing
-Analyzed load times and performance with Lighthouse and GTmetrix.
-3. Verify Responsiveness & Error Handling
-Tested the site across different screen sizes and ensured proper error handling.
-4. Document Test Results
-Recorded all test outcomes, performance benchmarks, and unresolved issues.
+What We Did:
+Deployment Strategy:
+Chose Vercel as the hosting platform for its seamless integration with Next.js, automatic deployments from GitHub, and scalability.
+Configured environment variables securely to store API keys and sensitive data.
+Staging Environment Setup:
+Deployed the application to the staging environment using Vercel.
+Validated deployment with functional, performance, and security testing.
+Staging Environment Testing:
+Conducted functional tests using Cypress and validated API responses via Postman.
+Performed performance testing with Lighthouse and GTmetrix.
+Tested the site’s responsiveness and error handling across devices.
 Test Case Reporting
-Test cases were documented in a CSV file with the following details:
-
 Test Case ID	Description	Steps	Expected Result	Actual Result	Status	Remarks
 TC001	Validate product listing	Open product page > Verify products	Products displayed	Products displayed	Passed	No issues found
 TC002	Test API error handling	Disconnect API > Refresh page	Show fallback message	Fallback message shown	Passed	Handled gracefully
@@ -123,9 +91,15 @@ TC003	Check cart functionality	Add item to cart > Verify cart	Cart updates corre
 TC004	Test form validation	Submit form with empty fields	Display error message	Error message displayed	Failed	Missing validation
 TC005	Verify HTTPS connection	Open site > Check HTTPS status	HTTPS enabled	HTTPS enabled	Passed	Secure connection
 Conclusion
-On Day 06, the application was successfully deployed to a staging environment using Vercel. The application underwent functional, performance, and security testing, with all outcomes documented. The staging setup is now ready for validation before moving to the production environment.
+Over the past six days, the Food-Tunk Q-Commerce Website has been successfully built and deployed to a staging environment. Key achievements include:
 
-Food-Tunk
+Backend Integration: Seamless data management via Sanity CMS.
+Dynamic Content Rendering: Efficient data display using GROQ queries.
+User Experience Enhancements: Features like dynamic routing, cart management, and real-time search.
+Testing and Validation: Comprehensive functional, performance, and security tests to ensure robustness and reliability.
+The project is now ready for further enhancements like user authentication, order management, and real-time updates, which will further improve the overall user experience.
+
+
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
