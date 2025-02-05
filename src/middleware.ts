@@ -7,7 +7,7 @@ const isPublicRoute = createRouteMatcher([
   '/sign-in(.*)', 
   '/', 
   '/shoplist', 
-//   '/shoplist/(.*)', // This will match dynamic routes inside shoplist, including [id]
+  '/shoplist/(.*)', // This will match dynamic routes inside shoplist, including [id]
   '/Blog',
   '/About',
   '/Chef',
